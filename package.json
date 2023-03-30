@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon src/index"
   },
   "repository": {
     "type": "git",
@@ -16,5 +17,16 @@
   "bugs": {
     "url": "https://github.com/FeFranklin/strategy/issues"
   },
-  "homepage": "https://github.com/FeFranklin/strategy#readme"
+  "homepage": "https://github.com/FeFranklin/strategy#readme",
+  "devDependencies": {
+    "eslint": "^8.37.0",
+    "eslint-config-prettier": "^8.8.0",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.7"
+  },
+  "dependencies": {
+    "knex": "^2.4.2",
+    "mongodb": "^5.1.0",
+    "pg": "^8.10.0"
+  }
 }
