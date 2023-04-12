@@ -22,3 +22,4 @@ docker run \
   -d \
   mongo:4
 
+docker logs mongodb

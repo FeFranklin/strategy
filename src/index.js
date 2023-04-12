@@ -19,5 +19,18 @@ const data = [{
   type: 'activityLog'
 }]
 
-await mongodbContext.create({name: data[1].name})
+// await mongodbContext.create({name: data[1].name})
 console.log(await mongodbContext.read())
+
+const contextTypes = {
+  transcation: postgresContext,
+  activityLog: mongodbContext
+}
+
+for (const {type, name} of data) {
+  const context = contextTypes[type]
+  await context.create({ name: name + Date.now()})
+
+  console.log(type, context.dbStrategy.constructor.name)
+  console.log(await context.read())
+}
